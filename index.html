@@ -405,21 +405,52 @@ footer{background:var(--charcoal2);padding:56px 48px 28px}
 .btn-signout:hover{border-color:var(--red);color:var(--red)}
 
 @media(max-width:768px){
-  nav{padding:16px 20px}
+  nav{padding:14px 20px}
   .nav-links{display:none}
-  .hero{grid-template-columns:1fr;padding:90px 20px 40px}
+  .nav-right .btn-nav-ghost{display:none}
+  .hero{grid-template-columns:1fr;padding:88px 20px 48px;gap:0}
   .hero-visual{display:none}
-  section{padding:60px 20px}
-  .cat-grid{grid-template-columns:repeat(3,1fr)}
+  .hero-title{font-size:2.8rem}
+  .hero-sub{font-size:15px}
+  .search-bar{max-width:100%}
+  section{padding:56px 20px}
+  .cat-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .cat-card{padding:16px 10px}
+  .cat-emoji{font-size:2rem}
   .resto-grid,.listing-grid,.testi-grid{grid-template-columns:1fr}
-  .hiw-grid{grid-template-columns:1fr 1fr}
+  .hiw-grid{grid-template-columns:1fr}
+  .hiw-step{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08)}
   .stats-row{grid-template-columns:1fr 1fr}
-  .footer-top{grid-template-columns:1fr 1fr}
+  .stat-item{padding:24px 16px}
+  .stat-num{font-size:2.4rem}
+  .footer-top{grid-template-columns:1fr 1fr;gap:28px}
+  .footer-brand{font-size:22px}
   .detail-content{grid-template-columns:1fr}
-  .checkout-content{grid-template-columns:1fr;padding:90px 20px 40px}
-  .app-promo{grid-template-columns:1fr}
+  .detail-content .order-summary-card{display:none}
+  .detail-hero{height:240px;padding:20px}
+  .detail-hero-name{font-size:1.6rem}
+  .detail-tabs{padding:0 20px;overflow-x:auto}
+  .checkout-content{grid-template-columns:1fr;padding:88px 20px 40px}
+  .checkout-title{font-size:1.8rem}
+  .form-grid{grid-template-columns:1fr}
+  .app-promo{grid-template-columns:1fr;padding:56px 20px}
   .app-visual{display:none}
-  .cart-drawer{width:100%}
+  .app-btns{flex-direction:column}
+  .cart-drawer{width:100%;max-width:100%}
+  .listing-hero{padding:100px 20px 32px}
+  .listing-title{font-size:2rem}
+  .filter-row{gap:8px}
+  .filter-btn{padding:7px 14px;font-size:12px}
+  .listing-content{padding:28px 20px}
+  .tracking-content{padding:88px 20px 48px}
+  .cta-title{font-size:2.4rem}
+  .cta-btns{flex-direction:column;align-items:center}
+  .auth-modal{padding:28px 20px;margin:16px}
+  .hiw-step:last-child{border-bottom:none}
+  .marquee-item{font-size:13px}
+  .section-title{font-size:1.8rem}
+  .testi-card{padding:20px}
+  .float-card{display:none}
 }
 </style>
 </head>
@@ -726,8 +757,14 @@ footer{background:var(--charcoal2);padding:56px 48px 28px}
       <h2 class="section-title">Order faster with our app</h2>
       <p class="section-sub">Track in real time, save favourites, and get exclusive app-only deals every week.</p>
       <div class="app-btns">
-        <div class="app-btn"><div class="app-btn-icon">🍎</div><div><div class="app-btn-label">Download on the</div><div class="app-btn-store">App Store</div></div></div>
-        <div class="app-btn"><div class="app-btn-icon">▶️</div><div><div class="app-btn-label">Get it on</div><div class="app-btn-store">Google Play</div></div></div>
+        <div class="app-btn">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><div class="app-btn-label">Download on the</div><div class="app-btn-store">App Store</div></div>
+        </div>
+        <div class="app-btn">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.3.17.64.22.99.14l12.82-7.41-2.79-2.79-11.02 10.06zM.44 2.08C.17 2.4 0 2.88 0 3.5v17c0 .62.17 1.1.44 1.42l.07.07 9.52-9.52v-.22L.51 2.01l-.07.07zM20.13 10.3l-2.63-1.52-3.13 3.13 3.13 3.13 2.66-1.54c.76-.44.76-1.15-.03-1.6v-.6zM4.17.14L17 7.55l-2.79 2.79L3.18.28c.35-.2.73-.21.99-.14z"/></svg>
+          <div><div class="app-btn-label">Get it on</div><div class="app-btn-store">Google Play</div></div>
+        </div>
       </div>
     </div>
     <div class="app-visual">
@@ -796,12 +833,95 @@ footer{background:var(--charcoal2);padding:56px 48px 28px}
     </div>
   </div>
   <div class="detail-tabs">
-    <button class="detail-tab active">Menu</button>
-    <button class="detail-tab">Reviews</button>
-    <button class="detail-tab">Info</button>
+    <button class="detail-tab active" onclick="switchDetailTab(this,'menu')">Menu</button>
+    <button class="detail-tab" onclick="switchDetailTab(this,'reviews')">Reviews</button>
+    <button class="detail-tab" onclick="switchDetailTab(this,'info')">Info</button>
   </div>
   <div class="detail-content">
-    <div id="menuContent"></div>
+    <div id="detailMainContent">
+      <!-- MENU TAB -->
+      <div id="tabMenu"><div id="menuContent"></div></div>
+      <!-- REVIEWS TAB -->
+      <div id="tabReviews" style="display:none">
+        <div style="margin-bottom:28px">
+          <div style="display:flex;align-items:center;gap:20px;background:white;border-radius:20px;padding:24px;box-shadow:var(--shadow-sm);margin-bottom:20px">
+            <div style="text-align:center;flex-shrink:0">
+              <div style="font-family:'Fraunces',serif;font-size:4rem;font-weight:900;color:var(--charcoal);line-height:1" id="reviewRating">4.9</div>
+              <div style="color:var(--yellow);font-size:20px;margin:4px 0">★★★★★</div>
+              <div style="font-size:13px;color:var(--muted)">2,847 reviews</div>
+            </div>
+            <div style="flex:1">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px"><span style="width:60px;color:var(--muted)">Food</span><div style="flex:1;height:6px;background:var(--cream2);border-radius:99px;overflow:hidden"><div style="height:100%;width:96%;background:var(--red);border-radius:99px"></div></div><span style="font-weight:700;width:28px">4.8</span></div>
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px"><span style="width:60px;color:var(--muted)">Service</span><div style="flex:1;height:6px;background:var(--cream2);border-radius:99px;overflow:hidden"><div style="height:100%;width:98%;background:var(--red);border-radius:99px"></div></div><span style="font-weight:700;width:28px">4.9</span></div>
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px"><span style="width:60px;color:var(--muted)">Speed</span><div style="flex:1;height:6px;background:var(--cream2);border-radius:99px;overflow:hidden"><div style="height:100%;width:90%;background:var(--red);border-radius:99px"></div></div><span style="font-weight:700;width:28px">4.5</span></div>
+                <div style="display:flex;align-items:center;gap:10px;font-size:13px"><span style="width:60px;color:var(--muted)">Value</span><div style="flex:1;height:6px;background:var(--cream2);border-radius:99px;overflow:hidden"><div style="height:100%;width:94%;background:var(--red);border-radius:99px"></div></div><span style="font-weight:700;width:28px">4.7</span></div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="background:white;border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#f97316,#e8321a);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">👩🏾</div>
+                <div><div style="font-weight:700;font-size:14px">Adaeze Okonkwo</div><div style="font-size:12px;color:var(--muted)">3 days ago · Victoria Island</div></div>
+                <div style="margin-left:auto;color:var(--yellow);font-size:14px">★★★★★</div>
+              </div>
+              <p style="font-size:14px;color:var(--charcoal2);line-height:1.6;font-style:italic">"Absolutely the best shawarma in Lagos. Arrived hot and perfectly wrapped. The garlic sauce is something else — I order twice a week now. Fast delivery too!"</p>
+            </div>
+            <div style="background:white;border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#22c55e,#16a34a);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">👨🏾</div>
+                <div><div style="font-weight:700;font-size:14px">Emeka Nwachukwu</div><div style="font-size:12px;color:var(--muted)">1 week ago · Lekki</div></div>
+                <div style="margin-left:auto;color:var(--yellow);font-size:14px">★★★★★</div>
+              </div>
+              <p style="font-size:14px;color:var(--charcoal2);line-height:1.6;font-style:italic">"Ordered the mixed shawarma and loaded fries. Everything was on point. Rider was polite and on time. Will definitely order again. 10/10 experience."</p>
+            </div>
+            <div style="background:white;border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">👩🏽</div>
+                <div><div style="font-weight:700;font-size:14px">Funke Adewale</div><div style="font-size:12px;color:var(--muted)">2 weeks ago · Ikeja</div></div>
+                <div style="margin-left:auto;color:var(--yellow);font-size:14px">★★★★☆</div>
+              </div>
+              <p style="font-size:14px;color:var(--charcoal2);line-height:1.6;font-style:italic">"Food was amazing as always. Only small issue was delivery took a bit longer than usual but the rider called ahead which I appreciated. Food was still warm. Great service overall."</p>
+            </div>
+            <div style="background:white;border-radius:16px;padding:20px;box-shadow:var(--shadow-sm)">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+                <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#f5c518,#f97316);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">👦🏿</div>
+                <div><div style="font-weight:700;font-size:14px">Chidi Obi</div><div style="font-size:12px;color:var(--muted)">3 weeks ago · Surulere</div></div>
+                <div style="margin-left:auto;color:var(--yellow);font-size:14px">★★★★★</div>
+              </div>
+              <p style="font-size:14px;color:var(--charcoal2);line-height:1.6;font-style:italic">"This place has become my weekly go-to. The Chapman drink is the perfect combo with the beef shawarma. Never disappoints. Tastelier needs to open everywhere in Nigeria."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- INFO TAB -->
+      <div id="tabInfo" style="display:none">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="background:white;border-radius:16px;padding:22px;box-shadow:var(--shadow-sm)">
+            <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)">Location & Hours</div>
+            <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
+              <div style="display:flex;gap:12px"><span style="font-size:1.2rem">📍</span><div><div style="font-weight:600;margin-bottom:2px">Address</div><div style="color:var(--muted)" id="infoAddress">15 Kofo Abayomi Street, Victoria Island, Lagos</div></div></div>
+              <div style="display:flex;gap:12px"><span style="font-size:1.2rem">📞</span><div><div style="font-weight:600;margin-bottom:2px">Phone</div><div style="color:var(--muted)">+234 801 234 5678</div></div></div>
+              <div style="display:flex;gap:12px"><span style="font-size:1.2rem">🕐</span><div><div style="font-weight:600;margin-bottom:2px">Opening Hours</div><div style="color:var(--muted)">Monday – Saturday: 10:00 AM – 10:00 PM<br>Sunday: 12:00 PM – 9:00 PM</div></div></div>
+            </div>
+          </div>
+          <div style="background:white;border-radius:16px;padding:22px;box-shadow:var(--shadow-sm)">
+            <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)">Delivery Info</div>
+            <div style="display:flex;flex-direction:column;gap:12px;font-size:14px">
+              <div style="display:flex;gap:12px"><span style="font-size:1.2rem">🏍️</span><div><div style="font-weight:600;margin-bottom:2px">Delivery Zone</div><div style="color:var(--muted)" id="infoZone">Victoria Island, Lekki, Ikoyi, Ajah</div></div></div>
+              <div style="display:flex;gap:12px"><span style="font-size:1.2rem">⏱️</span><div><div style="font-weight:600;margin-bottom:2px">Average Delivery Time</div><div style="color:var(--muted)" id="infoTime">20–30 minutes</div></div></div>
+              <div style="display:flex;gap:12px"><span style="font-size:1.2rem">💳</span><div><div style="font-weight:600;margin-bottom:2px">Payment Methods</div><div style="color:var(--muted)">Card, Bank Transfer, Cash on Delivery</div></div></div>
+              <div style="display:flex;gap:12px"><span style="font-size:1.2rem">🛒</span><div><div style="font-weight:600;margin-bottom:2px">Minimum Order</div><div style="color:var(--muted)" id="infoMin">₦2,000</div></div></div>
+            </div>
+          </div>
+          <div style="background:white;border-radius:16px;padding:22px;box-shadow:var(--shadow-sm)">
+            <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)">About</div>
+            <p style="font-size:14px;color:var(--muted);line-height:1.7" id="infoAbout">One of Lagos's most loved food spots, serving fresh handcrafted wraps and shawarmas made daily with premium ingredients. Every wrap is made to order — nothing sits under a heat lamp here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="order-summary-card" style="position:sticky;top:140px">
       <div class="summary-title">Your order</div>
       <div id="sideCartItems"><div style="text-align:center;color:var(--muted);font-size:14px;padding:20px 0">Add items to get started</div></div>
@@ -1221,6 +1341,15 @@ function renderSideCart() {
 function openCart() { document.getElementById('cartOverlay').classList.add('open'); document.getElementById('cartDrawer').classList.add('open'); renderCart(); }
 function closeCart() { document.getElementById('cartOverlay').classList.remove('open'); document.getElementById('cartDrawer').classList.remove('open'); }
 
+// ==================== DETAIL TABS ====================
+function switchDetailTab(btn, tab) {
+  document.querySelectorAll('.detail-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tabMenu').style.display = tab === 'menu' ? 'block' : 'none';
+  document.getElementById('tabReviews').style.display = tab === 'reviews' ? 'block' : 'none';
+  document.getElementById('tabInfo').style.display = tab === 'info' ? 'block' : 'none';
+}
+
 // ==================== RESTAURANTS ====================
 function renderListingGrid(list) {
   const grid = document.getElementById('listingGrid');
@@ -1278,6 +1407,26 @@ function showRestaurant(id) {
       </div>
     </div>
   `).join('');
+
+  // Populate info tab dynamically
+  const infoAddr = document.getElementById('infoAddress');
+  const infoZone = document.getElementById('infoZone');
+  const infoTime = document.getElementById('infoTime');
+  const infoMin = document.getElementById('infoMin');
+  const infoAbout = document.getElementById('infoAbout');
+  if(infoAddr) infoAddr.textContent = r.address || `15 ${r.area} Street, Lagos`;
+  if(infoZone) infoZone.textContent = r.zone || `${r.area} and surrounding areas`;
+  if(infoTime) infoTime.textContent = r.time;
+  if(infoMin) infoMin.textContent = `₦${r.min.toLocaleString()}`;
+  if(infoAbout) infoAbout.textContent = r.about || `${r.name} is one of Lagos's most loved restaurants, serving fresh meals made daily with premium ingredients. Everything is made to order for the freshest experience.`;
+
+  // Reset to menu tab
+  document.querySelectorAll('.detail-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.detail-tab')[0].classList.add('active');
+  document.getElementById('tabMenu').style.display = 'block';
+  document.getElementById('tabReviews').style.display = 'none';
+  document.getElementById('tabInfo').style.display = 'none';
+
   renderSideCart();
   showPage('detail');
 }

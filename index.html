@@ -1032,7 +1032,7 @@ async function initAuth() {
       // Clean up URL
       window.history.replaceState({}, document.title, window.location.pathname);
       showToast('Welcome to Tastelier! 🎉', 'success');
-      return;
+      closeAuth();
     }
   }
   const { data: { session } } = await sb.auth.getSession();
@@ -1108,11 +1108,11 @@ async function handleSignup() {
   if(password.length < 6) return showAuthMessage('Password must be at least 6 characters', 'error');
   const { error } = await sb.auth.signUp({ email, password, options: { data: { full_name: name } } });
   if(error) return showAuthMessage(error.message, 'error');
-  showAuthMessage('Account created! Check your email to confirm.', 'success');
+  showAuthMessage('Please check your email to confirm your account.', 'success');
 }
 
 async function signInWithGoogle() {
-  const { error } = await sb.auth.signInWithOAuth({ provider: 'google' });
+  const { error } = await sb.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.origin + window.location.pathname } });
   if(error) showAuthMessage(error.message, 'error');
 }
 
